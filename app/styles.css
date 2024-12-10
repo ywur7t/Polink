@@ -98,7 +98,7 @@ header{
 .menu li {
   margin: 60px 0 0 120px;
 }
-.menu li a {
+.menu li a, footer ul li a {
   font-size: clamp(18px, 5vw, 50px);
   text-decoration: none;
 }
@@ -364,8 +364,44 @@ header{
 }
 
 
+/*
+.wparrrrrr{
+  display: flex;
+  flex-direction: column;
+} */
+/* Контейнер для стрелки */
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex:1; */
+  /* margin: 100px; */
+  width:100%;
+  /* padding:100px; */
+  position: absolute;
+  inset:70% 0 0 -10%;
+  /* background-color: #f0f0f0; */
+}
 
+/* Стрелка */
+.arrow {
+  width: 32px;
+  height: 32px;
+  border-left: 4px solid black;
+  border-bottom: 4px solid black;
+  transform: rotate(-45deg);
+  animation: bounce 1.5s infinite;
+}
 
+/* Анимация прыжка */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-45deg);
+  }
+}
 
 
 
@@ -373,26 +409,65 @@ header{
 
 
 /* services-block */
+#services{
+  /* position: sticky; */
+  /* top:0px; */
+  /* background-color: #25043d; */
+}
 .services-main {
   display: flex;
   width: 100vw;
+  position: sticky;
+  top:0;
+  /* background-color: #25043d; */
+  /* height:150vh; */
+}
+/* .scrollable{
+  position: sticky;
+  display: flex;
+  top: 0;
+} */
+/* .scrollable.active {
+  outline: 2px solid #007bff;
+} */
+
+#leftBlock #image-3{
+  height:486px;
 }
 
 .left-images {
   flex: 1;
   overflow-x: scroll;
   white-space: nowrap;
+  position: absolute;
+  width:50vw;
 }
+.scrollable{
+  position: sticky;
+  top:0px;
+  /* background-color: #25043d; */
+  width:100vw;
+  /* right:50%; */
+  display: flex;
+  justify-content: right;
 
+
+}
 .right-blocks {
   flex: 1;
   overflow-y: scroll;
   height: 100vh;
   position: relative;
+  padding-left:50%;
+  /* padding-top:100px; */
+  /* left: 50%; */
+  /* transform: translateX(-500%); */
+  /* align-items: flex-end; */
+
 }
 .right-blocks .item-wrapper {
-  width: 33vw;
-  transition: top 0.5s ease-in-out;
+  width: 40vw;
+  transition: top 1s ease-in-out;
   position: sticky;
   z-index: 10;
 }
@@ -416,6 +491,7 @@ header{
 .right-blocks .item-wrapper:nth-child(1) {
   top: 0;
   left: 0;
+
 }
 
 .right-blocks .item-wrapper:nth-child(2) {
@@ -431,7 +507,9 @@ header{
 .right-blocks .item-wrapper:nth-child(4) {
   top: 90px;
   left: 90px;
+  /* margin-top:100%; */
 }
+
 
 /* WhyWe */
 #conteiner-items {
@@ -517,6 +595,7 @@ header{
 .contacts-main p {
   flex: 1;
   width: auto;
+
 }
 .contacts-main .item-wrapper {
   flex: 1;
@@ -551,6 +630,8 @@ header{
 }
 .contact-item p {
   margin: 0 5%;
+font-size: clamp(14px, 2vw, 36px);
+  font-weight: 400;
 }
 
 

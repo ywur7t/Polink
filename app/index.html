@@ -155,7 +155,8 @@
         <p class="text text-point purple services-header">НАШИ УСЛУГИ</p>
 
         <div class="services-main">
-
+          <!-- <div class="scrollable"> -->
+            <!-- <div class="wparrrrrr"> -->
           <div class="left-images" id="leftBlock">
             <img src="../src/create.png" alt="Image 1" />
             <img id="image-2" src="../src/target.png" alt="Image 2" />
@@ -163,6 +164,12 @@
             <img id="image-4" src="../src/analitics.png" alt="Image 4" />
           </div>
 
+
+
+        <!-- </div> -->
+
+
+          <div class="scrollable">
           <div class="right-blocks" id="rightBlock">
             <div class="item-wrapper overlay-blockq">
               <div class="item">
@@ -235,6 +242,9 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- </div> -->
 
         </div>
       </div>
@@ -268,9 +278,15 @@
               </p>
               <div class="item-main">
                 <div class="social-item">
-                  <img src="../src/Telegram.png" alt="SVG Image" />
-                  <img src="../src/WhatsApp.png" alt="SVG Image" />
-                  <img src="../src/WeChat.png" alt="SVG Image" />
+                  <a href="https://t.me/your_telegram_username" target="_blank">
+                    <img src="../src/Telegram.png" alt="SVG Image" />
+                  </a>
+                  <a href="https://wa.me/1234567890" target="_blank">
+                    <img src="../src/WhatsApp.png" alt="SVG Image" />
+                  </a>
+                  <a href="https://example.com/your_wechat_profile" target="_blank">
+                    <img src="../src/WeChat.png" alt="SVG Image" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -283,10 +299,10 @@
       <div>
         <div class="text white text-subpoint">Kanna .AdVantage</div>
         <ul class="nav text white text-main">
-          <li>Главная</li>
-          <li>Почему мы</li>
-          <li>Услуги</li>
-          <li>Контакты</li>
+          <li><a href="#main" class="menu-link text text-main white"> Главная</a></li>
+          <li><a href="#whywe" class="menu-link text text-main white">Почему мы</a></li>
+          <li><a href="#services" class="menu-link text text-main white">Услуги</a></li>
+          <li><a href="#contacts" class="menu-link text text-main white">Контакты</a></li>
         </ul>
       </div>
 
@@ -317,6 +333,8 @@
         </div>
       </div>
     </footer>
+
+
 
     <script src="script.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>

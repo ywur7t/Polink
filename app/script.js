@@ -154,26 +154,23 @@ menuButton.addEventListener('click', () => {
     // });
 
 
-const vertical = document.getElementById('vertical');
-    const horizontal = document.getElementById('horizontal');
+// const vertical = document.getElementById('vertical');
+//     const horizontal = document.getElementById('horizontal');
 
 
-    vertical.addEventListener('scroll', (e) => e.preventDefault());
-    horizontal.addEventListener('scroll', (e) => e.preventDefault());
+//     vertical.addEventListener('scroll', (e) => e.preventDefault());
+//     horizontal.addEventListener('scroll', (e) => e.preventDefault());
 
-    window.addEventListener('scroll', () => {
-        // Рассчитываем текущую позицию прокрутки страницы
-        const scrollRatio = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+//     window.addEventListener('scroll', () => {
+//         // Рассчитываем текущую позицию прокрутки страницы
+//         const scrollRatio = window.scrollY / (document.body.scrollHeight - window.innerHeight);
 
-        // Обновляем прокрутку вертикального блока
-        vertical.scrollTop = scrollRatio * (vertical.scrollHeight - vertical.clientHeight);
+//         // Обновляем прокрутку вертикального блока
+//         vertical.scrollTop = scrollRatio * (vertical.scrollHeight - vertical.clientHeight);
 
-        // Обновляем прокрутку горизонтального блока
-        horizontal.scrollLeft = scrollRatio * (horizontal.scrollWidth - horizontal.clientWidth);
-      });
-
-
-
+//         // Обновляем прокрутку горизонтального блока
+//         horizontal.scrollLeft = scrollRatio * (horizontal.scrollWidth - horizontal.clientWidth);
+//       });
 
 
 
@@ -182,25 +179,107 @@ const vertical = document.getElementById('vertical');
 
 
 
-      let current = 0;
-      const blocks = document.querySelectorAll('.block');
-      const shiftX = 20; // Горизонтальное смещение
-      const shiftY = 20; // Вертикальное смещение
 
-      function nextBlock() {
-        // Убираем текущий блок назад
-        blocks[current].style.zIndex = 0;
-        blocks[current].style.transform = `translate(-${shiftX}px, -${shiftY}px)`;
-        blocks[current].style.opacity = 0.6;
 
-        // Переходим к следующему блоку
-        current = (current + 1) % blocks.length;
 
-        // Выводим следующий блок на передний план
-        blocks[current].style.zIndex = 1;
-        blocks[current].style.transform = 'translate(0, 0)';
-        blocks[current].style.opacity = 1;
-      }
+      // let current = 0;
+      // const blocks = document.querySelectorAll('.block');
+      // const shiftX = 20; // Горизонтальное смещение
+      // const shiftY = 20; // Вертикальное смещение
 
-      // Смена блоков каждые 2 секунды
-      setInterval(nextBlock, 2000);
+      // function nextBlock() {
+      //   // Убираем текущий блок назад
+      //   blocks[current].style.zIndex = 0;
+      //   blocks[current].style.transform = `translate(-${shiftX}px, -${shiftY}px)`;
+      //   blocks[current].style.opacity = 0.6;
+
+      //   // Переходим к следующему блоку
+      //   current = (current + 1) % blocks.length;
+
+      //   // Выводим следующий блок на передний план
+      //   blocks[current].style.zIndex = 1;
+      //   blocks[current].style.transform = 'translate(0, 0)';
+      //   blocks[current].style.opacity = 1;
+      // }
+
+      // // Смена блоков каждые 2 секунды
+      // setInterval(nextBlock, 2000);
+
+
+
+
+      // document.addEventListener("scroll", () => {
+      //   const servicesMain = document.querySelector(".services-main");
+      //   const rightBlocks = document.querySelector(".right-blocks");
+
+      //   const rect = servicesMain.getBoundingClientRect();
+
+      //   // Проверяем, когда верх services-main достигает верха экрана
+      //   if (rect.top <= 0) {
+      //     rightBlocks.style.position = "fixed";
+      //     rightBlocks.style.top = "0";
+      //     rightBlocks.style.bottom = "0";
+      //     rightBlocks.style.overflowY = "auto";
+      //   } else {
+      //     rightBlocks.style.position = "relative";
+      //     rightBlocks.style.top = "";
+      //     rightBlocks.style.bottom = "";
+      //     rightBlocks.style.overflowY = "visible";
+      //   }
+      // });
+
+
+
+
+
+
+      // const container = document.querySelector('.scrollable');
+      // const items = document.querySelectorAll('.right-blocks .item-wrapper');
+
+      // container.addEventListener('scroll', () => {
+      //   const fourthItem = items[3]; // Получаем 4-й элемент
+      //   const containerRect = container.getBoundingClientRect();
+      //   const fourthItemRect = fourthItem.getBoundingClientRect();
+
+      //   // Проверяем, если 4-й элемент полностью виден
+      //   if (fourthItemRect.top >= containerRect.top) {
+      //     container.style.overflowY = 'hidden'; // Останавливаем прокрутку
+      //   } else {
+      //     container.style.overflowY = 'auto'; // Включаем прокрутку
+      //   }
+      // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const scrollableContainer = document.getElementsByClassName('.right-blocks');
+
+// window.addEventListener('scroll', () => {
+//   // Получаем процент прокрутки страницы
+//   const scrollPercentage =
+//     window.scrollY / (document.body.scrollHeight - window.innerHeight);
+
+//   // Вычисляем новую позицию скролла для контейнера
+//   const containerScrollHeight =
+//     scrollableContainer.scrollHeight - scrollableContainer.clientHeight;
+//   const newScrollTop = scrollPercentage * containerScrollHeight;
+
+//   // Применяем прокрутку контейнера
+//   scrollableContainer.scrollTop = newScrollTop;
+// });
+
+// scrollableContainer.addEventListener('scroll', (e) => {
+//   e.preventDefault(); // Предотвращаем стандартный скролл страницы
+// });
