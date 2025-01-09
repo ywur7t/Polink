@@ -24,3 +24,148 @@ menuLinks.forEach((link) => {
     menuButton.innerHTML = menuIconSVG;
   });
 });
+
+
+
+
+
+
+
+
+
+
+let lastScrollY = window.scrollY; // Для отслеживания направления прокрутки
+
+document.addEventListener("scroll", () => {
+  const blocks = document.querySelectorAll(".block");
+  const scrollDirection = window.scrollY > lastScrollY ? "down" : "up";
+  const triggerHeight = window.innerHeight * 0.8; // Высота для появления
+  const removeHeight = window.innerHeight * 0.2; // Высота для исчезновения
+
+  blocks.forEach(block => {
+    const blockTop = block.getBoundingClientRect().top;
+    const blockBottom = block.getBoundingClientRect().bottom;
+
+    if (scrollDirection === "down" && blockTop < triggerHeight) {
+      // Появление при прокрутке вниз (верхняя граница)
+      block.classList.add("active");
+    }
+    if (scrollDirection === "up" && blockBottom > removeHeight) {
+      // Появление при прокрутке вверх (нижняя граница)
+      block.classList.add("active");
+    }
+    if (scrollDirection === "down" && blockBottom < 0) {
+      // Исчезновение при прокрутке вниз (вышел за нижнюю границу экрана)
+      block.classList.remove("active");
+    }
+    if (scrollDirection === "up" && blockTop > window.innerHeight) {
+      // Исчезновение при прокрутке вверх (вышел за верхнюю границу экрана)
+      block.classList.remove("active");
+    }
+  });
+
+  lastScrollY = window.scrollY; // Обновляем последнее положение прокрутки
+});
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.carousel-track');
+  const items = Array.from(track.children);
+  const leftButton = document.querySelector('.nav-button.left');
+  const rightButton = document.querySelector('.nav-button.right');
+  const filterButtons = document.querySelectorAll('.filter-buttons button');
+  const indicatorsContainer = document.querySelector('.carousel-indicators');
+
+  let currentIndex = 0;
+  const getItemWidth = () => items[0].getBoundingClientRect().width;
+
+  const updateIndicators = () => {
+    const dots = Array.from(indicatorsContainer.children);
+    dots.forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentIndex);
+    });
+  };
+
+  const moveToIndex = (index) => {
+    currentIndex = index;
+    const itemWidth = getItemWidth();
+    track.style.transform = `translateX(-${index * itemWidth}px)`;
+    updateIndicators();
+  };
+
+  const createIndicators = (count) => {
+    indicatorsContainer.innerHTML = '';
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === currentIndex) dot.classList.add('active');
+      dot.addEventListener('click', () => moveToIndex(i));
+      indicatorsContainer.appendChild(dot);
+    }
+  };
+
+  const filterItems = (category) => {
+    const filteredItems = items.filter((item) =>
+      category === 'all' || item.dataset.category === category
+    );
+    track.innerHTML = '';
+    filteredItems.forEach((item) => track.appendChild(item));
+    currentIndex = 0;
+    createIndicators(filteredItems.length);
+    moveToIndex(0);
+  };
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const isActive = button.classList.contains('active');
+
+      filterButtons.forEach((btn) => btn.classList.remove('active'));
+
+      if (!isActive) {
+        button.classList.add('active');
+        filterItems(button.dataset.filter);
+      } else {
+        filterItems('all'); // Показать все элементы
+      }
+    });
+  });
+
+  leftButton.addEventListener('click', () => {
+    const maxIndex = track.children.length - 1;
+    if (currentIndex > 0) moveToIndex(currentIndex - 1);
+    else moveToIndex(maxIndex); // Цикличная навигация
+  });
+
+  rightButton.addEventListener('click', () => {
+    const maxIndex = track.children.length - 1;
+    if (currentIndex < maxIndex) moveToIndex(currentIndex + 1);
+    else moveToIndex(0); // Цикличная навигация
+  });
+
+  // Initial setup
+  filterItems('all');
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const main = document.querySelector('#main');
+  const highResImage = new Image();
+
+  highResImage.src = './src/main.png';
+  highResImage.onload = () => {
+    main.style.backgroundImage = `url(${highResImage.src})`;
+    main.classList.add('loaded');
+  };
+});
