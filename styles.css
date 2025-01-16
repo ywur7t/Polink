@@ -130,9 +130,18 @@ header{
   filter: blur(0);
 }
 
+#main-header p{
+  font-size: 6vw;
+}
+
+#main-content p{
+  /* font-size: 1.8vw; */
+
+}
+
 #main-header {
   text-align: center;
-  margin: 12% 0 5%;
+  margin: 18% 0 5%;
   font-family: 'Roboto', sans-serif;
 }
 #main-content {
@@ -140,7 +149,8 @@ header{
   flex-direction: row;
   text-align: center;
   padding: 0 100px;
-  gap: 1rem;
+  gap: 3rem;
+  margin-top: 4%;
 }
 #ch-text {
   display: flex;
@@ -282,13 +292,94 @@ header{
 
 
 
+
+
+
+
+.container {
+  width: 70vw;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(10px); */
+}
+
+h1 {
+  text-align: center;
+  /* font-size: 24px; */
+  margin-bottom: 20px;
+  /* color: #333; */
+}
+
+.service {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.service:last-child {
+  border-bottom: none;
+}
+
+.number {
+  font-weight: bold;
+  color: #0056b3;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.content h2 {
+  /* font-size: 18px; */
+  color: #d9534f;
+  /* font-weight: 00; */
+  margin: 0 0 5px;
+  /* line-height: 200%; */
+  margin:  0 0 3% 0;
+}
+
+.content p {
+  margin:  0 0 3% 0;
+  font-size: 1.3vw;
+}
+
+.explanation {
+  color: #888;
+  /* font-size: 14px; */
+  margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .services-header{
   margin-bottom:0;
 }
 .services-btn{
   display: flex;
-  gap:1%;
-  margin:1%;
+  gap:4%;
+  margin:1% 4%;
+  justify-content: space-evenly;
+  height: 10vh;
 
 }
 .services-btn .gl-btn,
@@ -298,17 +389,21 @@ header{
   cursor: pointer;
   border: none;
 
+  height: 100%;
 }
 
 .services-main{
   display: flex;
-  margin: auto;
-  width:90%;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .carousel-container {
   position: relative;
   width: 100%;
   overflow: hidden;
+  /* height: fit-content; */
 }
 
 .filter-buttons {
@@ -352,62 +447,41 @@ header{
 
 .carousel-item {
   width: 100%;
-  background-color: #282828;
+  background-color: rgba(121, 12, 199, 0.1);
   color: #fff;
   border-radius: 12px;
+  border: 1px solid rgba(121, 12, 199, 0.2);
   flex-shrink: 0;
   /* display: flex; */
   /* flex-direction: column; */
   padding: 5%;
+  /* height: fit-content; */
+  /* transition: transform 0.3s ease; */
+}
+.carousel-item:hover{
+  /* transform: scale(1.1); */
 }
 
 .carousel-item p{
   padding: 0;
   margin: 0;
+  color: #790CC7;
+
 }
 .carousel-item ul li{
-  margin: 10px;
+  margin: 5% 10px;
 }
 
 .carousel-item .item-header{
   width:100%;
-  margin-bottom: 5%;
+  /* margin-bottom: 5%; */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .nav-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(121, 12, 199, 0.6);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -441,12 +515,12 @@ header{
   height: 12px;
   margin: 0 5px;
   border-radius: 50%;
-  background-color: #555;
+  background-color: rgba(121, 12, 199, 0.6);
   cursor: pointer;
 }
 
 .carousel-indicators .dot.active {
-  background-color: #f5a623;
+  background-color: #fff;
 }
 
 
@@ -596,18 +670,16 @@ footer .contacts img {
 
 
 
-@media (max-width: 2560px) {
+@media (min-width: 1900px) {
   #main {
     height: 100vh;
   }
-  #services .text-main {
-    font-size: 1.7vw;
-  }
-  }
+
+}
 
 @media (max-width: 1440px){
   #main{
-    height: 70vh;
+    height: 80vh;
   }
   }
 
@@ -647,6 +719,9 @@ footer .contacts img {
   #whywe .text-subpoint{
     font-size: 2.4vw;
   }
+  #services .content {
+    margin: 0;
+}
 
 
 
@@ -665,9 +740,18 @@ footer .contacts img {
 
 
 @media (max-width: 768px) and (min-width: 480px) {
+  #services .content {
+    margin: 0;
+}
   #main{
-    height: 30vh;
+    height: 40vh;
   }
+.item{
+  padding: 5px;
+}
+#services .content  {
+  margin: 0;
+}
 
   #main-content{
     padding: 0 10px;
@@ -675,11 +759,7 @@ footer .contacts img {
 #main-content p{
   font-size: 2vw;
 }
-#main-content #ch-text{
 
-
-
-}
 #menu ul a{
   font-size: 5vw;
 }
@@ -690,9 +770,10 @@ footer .contacts img {
   #whywe .item-wrapper{
     height: 70vh;
   }
-  #services .content {
+  /* #services .content {
     margin-top: 3vh;
-  }
+
+  } */
   .close-button{
     width: 50%;
   }
@@ -766,7 +847,7 @@ footer .contacts img {
 }
 
   #main{
-    height: 35vh;
+    height: 40vh;
   }
   #main-header{
     margin-top: 25%;
@@ -776,6 +857,7 @@ footer .contacts img {
     padding: 0;
     margin: 0 auto;
     width: 80%;
+    gap: 1rem;
   }
   #main-content p{
     font-size: 2vw;
