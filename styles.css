@@ -134,14 +134,14 @@ header{
   font-size: 6vw;
 }
 
-#main-content p{
-  /* font-size: 1.8vw; */
+/* #main-content p{
+   font-size: 1.8vw;
 
-}
+} */
 
 #main-header {
   text-align: center;
-  margin: 18% 0 5%;
+  margin: 32vh 0 5vw;
   font-family: 'Roboto', sans-serif;
 }
 #main-content {
@@ -333,7 +333,7 @@ h1 {
 
 .content h2 {
   /* font-size: 18px; */
-  color: #d9534f;
+  color: #000000;
   /* font-weight: 00; */
   margin: 0 0 5px;
   /* line-height: 200%; */
@@ -670,7 +670,7 @@ footer .contacts img {
 
 
 
-@media (min-width: 1900px) {
+@media (min-width: 2500px) {
   #main {
     height: 100vh;
   }
@@ -681,7 +681,7 @@ footer .contacts img {
   #main{
     height: 80vh;
   }
-  }
+}
 
 @media (max-width: 1024px){
 #main{
